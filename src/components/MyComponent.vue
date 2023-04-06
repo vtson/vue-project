@@ -10,7 +10,7 @@
             <el-input v-model="searchImageKeyWord" placeholder="Search image keyword"></el-input>
           </el-col>
           <el-col :span="5">
-            <el-input v-model="search" placeholder="Search"></el-input>
+            <el-button type="success" @click="searchImage">Search</el-button>
           </el-col>
         </el-row>
       </div>
@@ -32,7 +32,7 @@
     </div>
     <div class="row">
       <div class="col-4">
-        <el-button type="success" @click="onClick">Generate Now</el-button>
+        <el-button type="success" @click="generateVideo">Generate Now</el-button>
       </div>
       <div class="col-8">
         <el-progress :percentage="progress" :status="progressStatus" :text-inside="true" :stroke-width="20"/>
@@ -62,15 +62,15 @@ export default {
   },
   methods: {
     onClick() {
-      alert("Button clicked");
     },
     handleChange(file) {
-      console.log('Uploaded file', file);
     },
     beforeUpload(file) {
-      console.log('Before upload', file);
-      return true;
     },
+    searchImage() {
+    },
+    generateVideo() {
+    }
   },
 };
 </script>
@@ -91,5 +91,9 @@ export default {
 
 .search-area {
   justify-content: space-between;
+}
+
+.search-area button {
+  width: -webkit-fill-available;
 }
 </style>
